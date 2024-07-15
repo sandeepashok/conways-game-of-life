@@ -9,7 +9,6 @@ import useInterval from "@use-it/interval";
 export default function App() {
   const [matrix, setMatrix] = useState(getDefaultMatrix());
   const [isRunning, setIsRunning] = useState(false);
-  const [id, setId] = useState(null);
 
   const handleCellClick = (i, j) => {
     let matrixCopy = [...matrix];
@@ -27,8 +26,6 @@ export default function App() {
 
   const handleReset = () => {
     setIsRunning(false);
-    clearInterval(id);
-    setId(null);
     setMatrix(getDefaultMatrix());
   };
 
