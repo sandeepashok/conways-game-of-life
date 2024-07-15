@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: #2a4e97;
+}
+
+.App {
+  font-family: HandelGothic, Trebuchet MS, sans-serif;
+  text-align: center;
+}
+.heading {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  color: #aacbff;
+  margin: inherit inherit 32px inherit;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  aligni-tems: center;
+  width: 600px;
+  border-left: 8px solid #f0f0f0;
+  border-right: 8px solid #f0f0f0;
+}
+.row:first-child {
+  border-top: 8px solid #f0f0f0;
+  border-radius: 4px 4px 0 0;
+}
+.row:last-child {
+  border-bottom: 8px solid #f0f0f0;
+  border-radius: 0 0 4px 4px;
+}
+.cell {
+  display: flex;
+  height: 18px;
+  width: 18px;
+  background-color: rgb(167, 166, 166);
+  border: 0.1px solid #f0f0f0;
+  cursor: pointer;
+}
+.cell:hover {
+  border: 0.1px solid #bebe4d;
+}
+.alive-cell {
+  background-color: yellow;
+  border: 0.1px solid #dada01;
+}
+.button-group {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.large-button {
+  all: unset;
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  border-radius: 50px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #2a4e97;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+  margin: 16px;
+  cursor: pointer;
+}
+.large-button > svg {
+  margin-right: 4px;
+}
+.large-button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.medium-button {
+  all: unset;
+  height: 32px;
+  width: 80px;
+  background-color: white;
+  border-radius: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #2a4e97;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+  margin: 16px;
+  cursor: pointer;
+}
+.medium-button > svg {
+  margin-right: 4px;
+}
+.medium-button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
