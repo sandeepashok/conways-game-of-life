@@ -23,7 +23,7 @@ body {
 .row {
   display: flex;
   justify-content: center;
-  aligni-tems: center;
+  align-items: center;
   width: 600px;
   border-left: 8px solid #f0f0f0;
   border-right: 8px solid #f0f0f0;
