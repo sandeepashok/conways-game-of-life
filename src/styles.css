@@ -57,7 +57,16 @@ body {
   justify-content: center;
   align-items: center;
 }
-.large-button {
+
+.button-group2 {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls {
   all: unset;
   height: 50px;
   width: 100px;
@@ -74,14 +83,15 @@ body {
   margin: 16px;
   cursor: pointer;
 }
-.large-button > svg {
-  margin-right: 4px;
+.controls > svg {
+  margin-right: 6px;
 }
-.large-button:active {
+.controls:active {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-.medium-button {
+
+.controls-small {
   all: unset;
   height: 32px;
   width: 80px;
@@ -98,10 +108,43 @@ body {
   margin: 16px;
   cursor: pointer;
 }
-.medium-button > svg {
+.controls-small > svg {
   margin-right: 4px;
 }
-.medium-button:active {
+.controls-small:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.category-button {
+  all: unset;
+  border-radius: 50px;
+  font-size: 22px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+  margin: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 100px;
+}
+.category-button > svg {
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  border: 4px solid white;
+  padding: 4px;
+  margin: 0 4px 4px 4px;
+}
+.category-button:active {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
@@ -115,6 +158,31 @@ body {
     width: 320px;
   }
   .button-group {
-    flex-direction: column;
+    margin: 8px;
+  }
+  .controls {
+    height: 40px;
+    width: 80px;
+    margin: 16px 8px;
+    font-size: 20px;
+  }
+  .controls-small {
+    width: 60px;
+    margin: 16px 8px;
+    font-size: 16px;
+  }
+  .category-button {
+    font-size: 18px;
+  }
+  .category-button > svg {
+    height: 40px;
+    width: 40px;
+    border: 2px solid white;
+  }
+}
+
+@media (max-width: 375px) {
+  .category-button {
+    font-size: 16px;
   }
 }

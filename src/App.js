@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./styles.css";
-import { FaPlay, FaStop } from "react-icons/fa6";
+import { FaPlay, FaStop, FaHandshakeAngle } from "react-icons/fa6";
 import { ImCross } from "react-icons/im";
 import { RiShareForwardFill } from "react-icons/ri";
-import { getDefaultMatrix, getUpdatedMatrix } from "./actions";
+import { GiNinjaHeroicStance, GiStarfighter, GiSentryGun, GiVillage } from "react-icons/gi";
+import { getDefaultMatrix, getUpdatedMatrix, getGliderMatrix, getTwoWorriorsMatrix, getGreateDefenceMatrix, getTruceMatrix, generateMatrix, getPeaceMatrix } from "./actions";
 import useInterval from "@use-it/interval";
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
   const [isRunning, setIsRunning] = useState(false);
 
   const handleCellClick = (i, j) => {
+    console.log(`matrix[${i}][${j}] = true;`)
     let matrixCopy = [...matrix];
     matrix[i][j] = !matrix[i][j];
     setMatrix(matrixCopy);
@@ -28,6 +30,26 @@ export default function App() {
     setIsRunning(false);
     setMatrix(getDefaultMatrix());
   };
+
+  const handleGlider = () => {
+    setMatrix(getGliderMatrix());
+  }
+
+  const handleWar = () => {
+    setMatrix(getTwoWorriorsMatrix());
+  }
+
+  const handleDefence = () => {
+    setMatrix(getGreateDefenceMatrix());
+  }
+
+  const handleTruce = () => {
+    setMatrix(getTruceMatrix());
+  }
+
+  const handlePeace = () => {
+    setMatrix(getPeaceMatrix());
+  }
 
   useInterval(
     () => {
@@ -53,24 +75,46 @@ export default function App() {
         ))}
       </div>
       <div className="button-group">
-        <button className="medium-button" onClick={handleReset}>
+        <button className="controls-small" onClick={handleReset}>
           <ImCross />
           reset
         </button>
         {isRunning ? (
-          <button className="large-button" onClick={handleStart}>
+          <button className="controls" onClick={handleStart}>
             <FaStop />
             stop
           </button>
         ) : (
-          <button className="large-button" onClick={handleStart}>
+          <button className="controls" onClick={handleStart}>
             <FaPlay />
             start
           </button>
         )}
-        <button className="medium-button" onClick={handleNext}>
+        <button className="controls-small" onClick={handleNext}>
           <RiShareForwardFill />
           next
+        </button>
+      </div>
+      <div className="button-group2">
+        <button className="category-button" onClick={handleGlider}>
+          <GiStarfighter />
+          glider
+        </button>
+        <button className="category-button" onClick={handleWar}>
+          <GiNinjaHeroicStance />
+          war-zone
+        </button>
+        <button className="category-button" onClick={handleDefence}>
+          <GiSentryGun />
+          defence
+        </button>
+        <button className="category-button" onClick={handleTruce}>
+          <FaHandshakeAngle />
+          truce
+        </button>
+        <button className="category-button" onClick={handlePeace}>
+          <GiVillage />
+          peace
         </button>
       </div>
     </div>
